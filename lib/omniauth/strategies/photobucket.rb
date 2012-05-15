@@ -4,8 +4,6 @@ require 'omniauth-oauth'
 module OmniAuth
   module Strategies
     class Photobucket < OmniAuth::Strategies::OAuth
-      unloadable
-
       option :name, 'photobucket'
 
       option :client_options, {
