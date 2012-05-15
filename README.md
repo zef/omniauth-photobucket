@@ -1,6 +1,6 @@
-# Omniauth::Photobucket
+# OmniAuth Photobucket
 
-TODO: Write a gem description
+A Photobucket strategy for OmniAuth 1.0.
 
 ## Installation
 
@@ -8,22 +8,39 @@ Add this line to your application's Gemfile:
 
     gem 'omniauth-photobucket'
 
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install omniauth-photobucket
+And then run `bundle`.
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+use OmniAuth::Builder do
+  provider 'photobucket', PHOTOBUCKET_KEY, PHOTOBUCKET_SECRET
+end
 
-## Contributing
+# or in your devise config:
+config.omniauth :photobucket, PHOTOBUCKET_KEY, PHOTOBUCKET_SECRET
+```
 
-1. Fork it
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Added some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request
+## Auth Hash Schema
+
+The following information is provided back to you for this provider:
+
+```ruby
+{
+  provider: 'photobucket',
+  uid: 'photobucket_username',
+  info: {
+    username: 'photbucket_username',
+    url: 'http://s1234.photobucket.com/albums/s123/photobucket_username'
+  },
+  credentials: {
+    token: 'the_token',
+    secret: 'the_secret'
+  },
+  extra: { 
+    # check this out for a few other small things
+    access_token: raw_oauth_access_token_object
+  }
+}
+```
+
