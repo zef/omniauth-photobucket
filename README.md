@@ -6,7 +6,9 @@ A Photobucket strategy for OmniAuth 1.0.
 
 Add this line to your application's Gemfile:
 
-    gem 'omniauth-photobucket'
+```ruby
+gem 'omniauth-photobucket'
+```
 
 And then run `bundle`.
 
@@ -33,7 +35,9 @@ The following information is provided back to you for this provider:
     name:     'photbucket_username',
     nickname: 'photbucket_username',
     urls: {
-      'home' => 'http://s1234.photobucket.com/albums/s123/photobucket_username'
+      home: 'http://s1234.photobucket.com/albums/s123/photobucket_username',
+      # You'll need to store this for some API calls
+      api_subdomain: 'api1234.photobucket.com'
     }
   },
   credentials: {
