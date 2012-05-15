@@ -17,13 +17,16 @@ module OmniAuth
 
       info do
         {
-          'username' => raw_info[:username],
-          'url'      => raw_info[:homeurl]
+          'name'     => raw_info[:username],
+          'nickname' => raw_info[:username],
+          'urls'     => {
+            'home'   => raw_info[:homeurl]
+          }
         }
       end
 
       extra do
-        raw_info
+        { 'raw_info' => raw_info }
       end
 
       def raw_info

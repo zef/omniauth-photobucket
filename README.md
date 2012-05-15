@@ -30,16 +30,19 @@ The following information is provided back to you for this provider:
   provider: 'photobucket',
   uid: 'photobucket_username',
   info: {
-    username: 'photbucket_username',
-    url: 'http://s1234.photobucket.com/albums/s123/photobucket_username'
+    name:     'photbucket_username',
+    nickname: 'photbucket_username',
+    urls: {
+      'home' => 'http://s1234.photobucket.com/albums/s123/photobucket_username'
+    }
   },
   credentials: {
-    token: 'the_token',
+    token:  'the_token',
     secret: 'the_secret'
   },
   extra: { 
     # check this out for a few other small things
-    access_token: raw_oauth_access_token_object
+    raw_info: raw_info_from_request
   }
 }
 ```
