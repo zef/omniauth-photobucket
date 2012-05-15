@@ -21,7 +21,7 @@ module OmniAuth
           'nickname' => raw_info[:username],
           'urls'     => {
             'home'          => raw_info[:homeurl],
-            'api_sudbomain' => raw_info[:subdomain]
+            'api_subdomain' => raw_info[:subdomain]
           }
         }
       end
